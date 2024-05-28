@@ -119,12 +119,13 @@ namespace CarInsuranceBot.Helper
         private async Task HandleDialogStartAsync(Message message, CancellationToken cancellationToken, long customerId)
         {
             _logger.LogInformation($"Bot started a conversation in chat: {message.Chat.Id}");
+            var userFullName = $"{message.From!.FirstName} {message.From!.LastName}";
             string botResponse;
             if (string.Equals(message.Text, "/start", StringComparison.OrdinalIgnoreCase))
             {
                 botResponse = await GetReplyFromOpenAIAsync(
-                    """
-                    You are a bot for car insurance processing. Introduce yourself and say something like 
+                    $"""
+                    You are a bot for car insurance processing. Say hi to {userFullName} .Introduce yourself and say something like 
                     'To start the procedure, you need to upload a photo of your passport', mention that photo must be in compressed format
                     """);
                 await _customerService.SetCustomerStageAsync(customerId, Stage.Passport);
