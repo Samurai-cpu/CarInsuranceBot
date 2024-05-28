@@ -210,7 +210,8 @@ namespace CarInsuranceBot.Helper
                 """
                 The user has answered whether their document data is correct.
                 Based on their response, decide if it is positive or negative. 
-                If positive, reply with 'yes'; if negative, reply with 'no'; if you have concers answer 'idk'
+                If positive, reply with 'yes'; if negative, reply with 'no',                             
+                be more confident in your decision
                 """, message);
             if (string.Equals(openAIRerly, "yes", StringComparison.OrdinalIgnoreCase))
             {
@@ -247,7 +248,8 @@ namespace CarInsuranceBot.Helper
                 """
                 The user has answered whether their document data is correct.
                 Based on their response, decide if it is positive or negative. 
-                If positive, reply with 'yes'; if negative, reply with 'no'; if you have concers answer 'idk'
+                If positive, reply with 'yes'; if negative, reply with 'no',
+                be more confident in your decision
                 """, message);
             if (string.Equals(openAIRerly, "yes", StringComparison.OrdinalIgnoreCase))
             {
@@ -280,7 +282,8 @@ namespace CarInsuranceBot.Helper
                 """
                 User was replyed on the proposition of car insurance,
                 Make a decision is this reply positive or negative,
-                if positive answer 'yes' if negative 'no' if you havе concerns answer 'idk'
+                if positive answer 'yes' if negative 'no',
+                be more confident in your decision, answer only 'yes' or 'no'
                 """, message);
             if (string.Equals(openAIRerly, "yes", StringComparison.OrdinalIgnoreCase))
             {
